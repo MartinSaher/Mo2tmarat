@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f6f5c"><title>مؤتمراتي</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--bg:#f4f3ee;--cd:#fff;--tx:#1b2420;--mu:#68736d;--br:#e0ded5;--p:#1f6f5c;--p2:#2f9a80;--g:#b87c1c;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#121815;--cd:#1c2621;--tx:#eef2ef;--mu:#98a59e;--br:#32403a;--p:#3fae92;--p2:#2a7f6a;--g:#e2a94d}}
+:root[data-theme=night]{--bg:#121815;--cd:#1c2621;--tx:#eef2ef;--mu:#98a59e;--br:#32403a;--p:#3fae92;--p2:#2a7f6a;--g:#e2a94d}
+:root[data-theme=ocean]{--bg:#eef4f8;--cd:#fff;--tx:#12212b;--mu:#5d7280;--br:#d5e2ea;--p:#1c6aa8;--p2:#3b93d6;--g:#c27a10}
+:root[data-theme=rose]{--bg:#fbf1f3;--cd:#fff;--tx:#2b1a1f;--mu:#7a6269;--br:#ecd6db;--p:#c2395e;--p2:#e0607f;--g:#a4691b}
+:root[data-theme=violet]{--bg:#f3f0fa;--cd:#fff;--tx:#1f1a2e;--mu:#6f6888;--br:#dcd6ee;--p:#6a45c9;--p2:#8d6be0;--g:#b07a1d}
+:root[data-theme=sunset]{--bg:#fdf3e9;--cd:#fff;--tx:#2d1f14;--mu:#7d6a58;--br:#efdcc8;--p:#d2661b;--p2:#ee8a3c;--g:#8a5a12}
+:root[data-theme=midnight]{--bg:#0d1420;--cd:#151e2e;--tx:#e8eef8;--mu:#8d9bb3;--br:#26324a;--p:#5aa7f0;--p2:#3b7fc4;--g:#e2a94d;--on:#07101c}
+:root[data-theme=amoled]{--bg:#000;--cd:#0f0f0f;--tx:#f2f2f2;--mu:#9a9a9a;--br:#2a2a2a;--p:#3fd6a8;--p2:#1fa57f;--g:#f0b955;--on:#00110b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Segoe UI",Tahoma,sans-serif;overflow-x:hidden;-webkit-user-select:none;user-select:none;overscroll-behavior-y:contain;transition:background .35s,color .35s}
+input,textarea{-webkit-user-select:text;user-select:text}
+#app{max-width:560px;margin:auto;padding:0 12px 130px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding:12px 0 8px;transition:background .35s}
+.tr{display:flex;align-items:center;gap:8px}.tr h1,.tr h2{margin:0;font-size:20px;flex:1}
+button{position:relative;overflow:hidden;font-family:inherit}
+.ib{border:1px solid var(--br);background:var(--cd);color:var(--tx);border-radius:12px;font-size:17px;padding:8px 12px;transition:transform .15s,background .35s}
+.hint{color:var(--mu);font-size:13.5px;line-height:1.7;margin:2px 2px 12px}
+.card{background:var(--cd);border:1px solid var(--br);border-radius:16px;padding:14px;margin-bottom:12px;animation:up .4s both;transition:background .35s,border-color .35s}
+.card.out{animation:out .25s forwards}
+.card h3{margin:0 0 4px;font-size:15px}
+label{display:block;font-size:12.5px;color:var(--mu);margin:10px 0 4px}
+input[type=number],input[type=text],textarea{width:100%;font:inherit;font-size:18px;padding:11px;border:1px solid var(--br);border-radius:12px;background:var(--bg);color:var(--tx);transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:0;border-color:var(--p);box-shadow:0 0 0 3px color-mix(in srgb,var(--p) 25%,transparent)}
+.row{display:flex;gap:8px}.row>div{flex:1}
+.rs{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px dashed var(--br);font-size:14px}
+.rs b{font-size:16px;color:var(--p)}.m::after{content:" ج";font-size:11px;color:var(--mu)}
+.rs.t b{font-size:17px}.rs.H{background:linear-gradient(135deg,var(--p2),var(--p));color:var(--on);border:0;border-radius:12px;padding:12px;margin-top:8px}.rs.H b,.rs.H .m::after{color:var(--on)}
+.pl{animation:pl .45s}
+.sh{font-weight:700;color:var(--g);margin:16px 0 2px;font-size:14px}
+.inv{border:2px dashed var(--br)}
+.btn{padding:13px;border-radius:14px;border:0;background:var(--p);color:var(--on);font:inherit;font-size:16px;font-weight:600;transition:transform .15s,background .35s;width:100%}
+.btn:active,.ib:active,.cn:active,.sw2:active{transform:scale(.94)}.btn.o{background:none;border:1px dashed var(--p);color:var(--p)}
+.cn{display:flex;align-items:center;gap:8px;background:var(--cd);border:1px solid var(--br);border-radius:16px;padding:14px;margin-bottom:10px;animation:up .45s both;animation-delay:var(--d);transition:transform .15s,background .35s}
+.cn .nm{flex:1;border:0;background:none;text-align:right;color:var(--tx);font:inherit;padding:0}.cn b{display:block;font-size:16px}.cn small{color:var(--mu)}
+.empty{text-align:center;color:var(--mu);padding:30px 0 22px;font-size:15px}.bob{font-size:56px;animation:bob 2s ease-in-out infinite}
+.bot{position:fixed;left:0;right:0;bottom:0;background:var(--cd);border-top:1px solid var(--br);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));z-index:6;transition:background .35s}
+.bot>div{max-width:560px;margin:auto}.pill{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:var(--mu)}.pill b{color:var(--p);font-size:15px}
+.nav{display:flex;gap:8px}.nav .btn.o{width:35%}
+.pg{animation:sl .35s cubic-bezier(.2,.8,.2,1) both}
+select{width:100%;font:inherit;font-size:17px;padding:11px;border:1px solid var(--br);border-radius:12px;background:var(--bg);color:var(--tx)}
+.dots{display:flex;gap:4px;margin-top:10px}.dt{flex:1;border:1px solid var(--br);background:var(--cd);border-radius:10px;font-size:16px;padding:5px 0;transition:all .25s;color:var(--tx)}.dt.on{background:var(--p);border-color:var(--p)}.dt.cur{transform:scale(1.12);box-shadow:0 2px 8px #0003}
+#md{position:fixed;inset:0;background:#0007;z-index:9;display:flex;padding:20px;animation:fd .2s}
+#md>div{background:var(--cd);border-radius:18px;padding:18px;width:100%;max-width:420px;margin:auto;max-height:90vh;overflow:auto;animation:pop .28s cubic-bezier(.3,1.5,.5,1)}
+#md p{margin:0 0 12px;font-size:16px}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.sw2{border:2px solid var(--br);border-radius:14px;padding:8px 4px;background:var(--cd);color:var(--tx);font-size:12.5px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .15s,border-color .2s}
+.sw2 i{display:block;width:100%;height:30px;border-radius:9px;border:1px solid #0002}
+.sw2.on{border-color:var(--p);box-shadow:0 0 0 3px color-mix(in srgb,var(--p) 25%,transparent)}
+.srow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-top:1px dashed var(--br);font-size:15px}
+input.tg{-webkit-appearance:none;appearance:none;width:50px;height:30px;border-radius:20px;background:var(--br);position:relative;transition:background .25s;flex:none;margin:0}
+input.tg::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .25s cubic-bezier(.3,1.6,.5,1);box-shadow:0 1px 3px #0004}
+input.tg:checked{background:var(--p)}input.tg:checked::after{transform:translateX(-20px)}
+input.rg{width:55%;accent-color:var(--p)}
+.rp{position:absolute;border-radius:50%;background:currentColor;opacity:.25;transform:scale(0);animation:rp .5s ease-out forwards;pointer-events:none}
+.cf{position:fixed;bottom:90px;font-style:normal;font-size:24px;z-index:20;pointer-events:none;animation:cf 1.3s cubic-bezier(.1,.7,.3,1) forwards}
+.toast{position:fixed;bottom:calc(110px + env(safe-area-inset-bottom,0px));left:50%;background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:20px;font-size:14px;z-index:30;animation:toast 1.9s both;max-width:90%;text-align:center}
+.noanim *,.noanim *::before,.noanim *::after{animation:none!important;transition:none!important}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+@keyframes sl{from{opacity:0;transform:translateX(-30px)}}
+@keyframes sr{from{opacity:0;transform:translateX(30px)}}
+@keyframes fd{from{opacity:0}}
+@keyframes pop{from{opacity:0;transform:scale(.88)}}
+@keyframes out{to{opacity:0;transform:translateX(60px) scale(.9)}}
+@keyframes pl{40%{transform:scale(1.18)}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes rp{to{transform:scale(1);opacity:0}}
+@keyframes cf{0%{transform:translate(0,0) rotate(0);opacity:1}70%{opacity:1}100%{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,12px)}10%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0}}
+</style></head><body><div id="app"></div>
+<script>
+const $=s=>document.querySelector(s),N=v=>parseFloat(v)||0,fm=x=>(+x||0).toLocaleString('en',{maximumFractionDigits:2});
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- البيانات ---------- */
+const blank=()=>({id:Date.now()+Math.random().toString(36).slice(2,5),name:'مؤتمر جديد',x:[]});
+let DB;try{DB=JSON.parse(localStorage.getItem('cc3'))}catch(e){}
+if(!DB||!DB.list)DB={cur:null,list:[]};
+const save=()=>{try{localStorage.setItem('cc3',JSON.stringify(DB))}catch(e){}};
+const C=()=>DB.list.find(c=>c.id===DB.cur);
+let step=-1,R={};
+
+/* ---------- الإعدادات ---------- */
+const DS={th:'auto',snd:1,vol:.7,pk:'soft',hap:1,anim:1};
+let S0;try{S0=JSON.parse(localStorage.getItem('cc3s'))}catch(e){}
+const ST=Object.assign({},DS,S0||{});
+const saveS=()=>{try{localStorage.setItem('cc3s',JSON.stringify(ST))}catch(e){}};
+const TH=[['auto','تلقائي','#f4f3ee','#121815'],['green','أخضر','#f4f3ee','#1f6f5c'],['ocean','محيط','#eef4f8','#1c6aa8'],['rose','وردي','#fbf1f3','#c2395e'],['violet','بنفسجي','#f3f0fa','#6a45c9'],['sunset','غروب','#fdf3e9','#d2661b'],['night','ليلي','#121815','#3fae92'],['midnight','منتصف الليل','#0d1420','#5aa7f0'],['amoled','أسود','#000','#3fd6a8']];
+function syncMeta(){const m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',getComputedStyle(document.documentElement).getPropertyValue('--p').trim()||'#1f6f5c')}
+function applyS(){const r=document.documentElement;if(ST.th==='auto')delete r.dataset.theme;else r.dataset.theme=ST.th;document.body.classList.toggle('noanim',!ST.anim);syncMeta()}
+try{window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',syncMeta)}catch(e){}
+
+/* ---------- الأصوات (WebAudio) ---------- */
+let AC;const ac=()=>{try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();return AC}catch(e){return null}};
+const PK={soft:{a:'sine',b:'triangle',v:1,s:1,d:1},arcade:{a:'square',b:'square',v:.4,s:0,d:.9},bubble:{a:'sine',b:'sine',v:1.1,s:1.8,d:.8},wood:{a:'triangle',b:'triangle',v:1.3,s:.3,d:.55}};
+function tone(f,d,o={}){if(!ST.snd)return;const a=ac();if(!a)return;const p=PK[ST.pk]||PK.soft,t=a.currentTime+(o.t||0),dd=d*p.d,os=a.createOscillator(),g=a.createGain();
+ os.type=o.w==2?p.b:p.a;os.frequency.setValueAtTime(f,t);
+ if(o.s)os.frequency.exponentialRampToValueAtTime(Math.max(40,f+(o.s-f)*p.s),t+dd);
+ const v=Math.max(.0002,.22*ST.vol*(o.v||1)*p.v);
+ g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dd);
+ os.connect(g);g.connect(a.destination);os.start(t);os.stop(t+dd+.03)}
+const SFX={
+ tap:()=>tone(620,.07,{s:900}),
+ tick:()=>tone(1500,.025,{v:.35,w:2}),
+ next:()=>{tone(523,.09,{w:2});tone(784,.13,{w:2,t:.07})},
+ prev:()=>{tone(784,.09,{w:2});tone(523,.13,{w:2,t:.07})},
+ add:()=>{tone(440,.1,{s:880});tone(880,.12,{t:.08,w:2})},
+ del:()=>tone(340,.18,{s:110,v:.8}),
+ open:()=>{tone(587,.08,{w:2});tone(880,.1,{t:.06,w:2})},
+ dup:()=>{tone(660,.06);tone(660,.06,{t:.08})},
+ theme:()=>{[523,659,784].forEach((f,i)=>tone(f,.12,{t:i*.07,w:2}))},
+ win:()=>{[523,659,784,1047].forEach((f,i)=>tone(f,.18,{t:i*.09,w:2}))},
+ warn:()=>tone(240,.12,{s:200,v:.8}),
+ on:()=>tone(700,.08,{s:1000}),
+ off:()=>tone(700,.08,{s:450})};
+const hp=p=>{if(ST.hap&&navigator.vibrate)try{navigator.vibrate(p)}catch(e){}};
+const fx=(k,h)=>{try{SFX[k]&&SFX[k]()}catch(e){}if(h!==undefined)hp(h)};
+let lt=0,lt2=0;
+const tickThr=()=>{const n=performance.now();if(n-lt>60){lt=n;fx('tick')}};
+const tapThr=()=>{const n=performance.now();if(n-lt2>130){lt2=n;fx('tap')}};
+
+/* ---------- تأثيرات ---------- */
+function confetti(){if(!ST.anim)return;const em=['🎉','✨','🎊','⭐','💚','🪅'];
+ for(let i=0;i<28;i++){const e=document.createElement('i');e.className='cf';e.textContent=em[i%em.length];
+  e.style.cssText=`left:${50+(Math.random()-.5)*30}%;--x:${(Math.random()-.5)*360}px;--y:${-(220+Math.random()*320)}px;--r:${Math.random()*720-360}deg;animation-delay:${Math.random()*.15}s`;
+  document.body.appendChild(e);setTimeout(()=>e.remove(),1700)}}
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1950)}
+
+/* ---------- النوافذ + زرار الرجوع ---------- */
+let mp=0,ign=0,pushed=0;
+function openM(h){const o=$('#md');if(o)o.remove();const d=document.createElement('div');d.id='md';d.innerHTML=h;document.body.appendChild(d);if(!mp){try{history.pushState({m:1},'')}catch(e){}mp=1}return d}
+function closeM(){const o=$('#md');if(o)o.remove();if(mp){mp=0;ign++;try{history.back()}catch(e){}}}
+const enter=()=>{if(!pushed){try{history.pushState({w:1},'')}catch(e){}pushed=1}};
+function toHome(){if(pushed){pushed=0;ign++;try{history.back()}catch(e){}}home()}
+addEventListener('popstate',()=>{if(ign>0){ign--;return}if(mp){mp=0;const o=$('#md');if(o)o.remove();return}if(step>=0){pushed=0;save();home()}});
+
+/* ---------- الحسابات (زي ما هي) ---------- */
+function calc(c){const n=N(c.n),m=N(c.m),nt=N(c.nt),R={};
+ R.hr=N(c.pr)*nt*n;R.ho=(c.po===''||c.po==null?N(c.pr):N(c.po))*nt*m;R.hp=N(c.pr)*nt;
+ const qr=Math.min(N(c.qr),n),qo=Math.min(N(c.qo),m),rr=n-qr,ro=m-qo,T=rr+ro,cap=N(c.cap);
+ R.bn=cap?Math.ceil(T/cap):0;R.bt=R.bn*N(c.bc);R.rid=T?R.bt/T:0;R.br=R.rid*rr;R.bo=R.rid*ro;R.ar=qr*N(c.alr);R.ao=qo*N(c.alo);
+ R.xt=0;R.xo=0;c.x.forEach((x,j)=>{const q=x.q===''||x.q==null?1:N(x.q),g=x.g||'r',cnt=g=='r'?n:g=='o'?m:n+m,t=N(x.a)*q*(x.md=='pp'?cnt:1),h=n+m,a=t*(g=='r'?1:g=='o'?0:(h?n/h:0));R.xt+=a;R.xo+=t-a;R['xi'+j]=t;R['xq'+j]=cnt?t/cnt:0});
+ const kk=N(c.cg)/100;R.gr=(R.hr+R.br+R.ar+R.xt)*kk;R.go=(R.ho+R.bo+R.ao+R.xo)*kk;
+ R.cr=R.hr+R.br+R.ar+R.xt+R.gr;R.co=R.ho+R.bo+R.ao+R.xo+R.go;R.tc=R.cr+R.co;R.pc=n?R.cr/n:0;
+ const sb=c.sb===''||c.sb==null?n:Math.min(N(c.sb),n);R.sa=N(c.sa);R.sp=sb?R.sa/sb:0;
+ R.fr=N(c.fr);R.fo=N(c.fo);R.ur=R.fr*n;R.uo=R.fo*m;
+ R.aft=R.pc-R.sp;R.ch1=R.aft-R.fr;R.ch0=R.pc-R.fr;R.net=R.tc-R.ur-R.uo-R.sa;R.on=R.uo-R.co;R.opc=m?R.co/m:0;R.od=R.fo-R.opc;return R}
+function setN(el,v){const a=el._v||0;el._v=v;
+ if(ST.anim&&el._p!==undefined){el.classList.remove('pl');void el.offsetWidth;el.classList.add('pl')}el._p=1;
+ const t0=performance.now();(function st(t){const k=Math.min((t-t0)/350,1),e=1-Math.pow(1-k,3);el.textContent=fm(a+(v-a)*e);if(k<1)requestAnimationFrame(st)})(t0)}
+function refresh(){const c=C();if(!c)return;R=calc(c);document.querySelectorAll('[data-r]').forEach(el=>{const v=R[el.dataset.r]||0;if(el._v!==v)setN(el,v)})}
+
+/* ---------- مكونات الواجهة ---------- */
+const f=(k,l,ph='')=>`<div><label>${l}</label><input type="number" inputmode="decimal" data-k="${k}" value="${C()[k]??''}" placeholder="${ph}"></div>`;
+const r=(l,k,x='')=>`<div class="rs ${x}"><span>${l}</span><b class="m" data-r="${k}"></b></div>`;
+const cd=(t,b)=>`<div class="card"><h3>${t}</h3>${b}</div>`;
+const has=()=>N(C().m)>0;
+const S=[
+['🏛','بيانات المؤتمر','اكتب اسم المؤتمر وعدد الأفراد. العاديين هم اللي الكنيسة بتدعمهم. أما خارج الدعم فبيتحسب لهم كل حاجة لوحدهم.',()=>cd('اسم المؤتمر',`<input type="text" data-k="name" value="${esc(C().name)}">`)+cd('عدد الأفراد',`<div class="row">${f('n','العاديين')}${f('m','خارج الدعم')}</div>`)],
+['🛏','المبيت','سعر الليلة للفرد الواحد في البيت، وعدد الليالي اللي هتقعدوها.',()=>cd('الأفراد العاديين',`<div class="row">${f('pr','سعر الليلة للفرد')}${f('nt','عدد الليالي')}</div>${r('تكلفة الفرد','hp')}${r('إجمالي المبيت','hr','t')}`)+(has()?cd('خارج الدعم',`${f('po','سعر الليلة للفرد','لو فاضي = نفس سعر العاديين')}${r('إجمالي المبيت','ho','t')}`):'')],
+['🚌','المواصلات','اكتب سعة الأتوبيس وتكلفته ذهاب ورجوع. اللي هيروحوا بعربيتهم بيتشالوا من الأتوبيس تلقائياً.',()=>cd('الأتوبيس',`<div class="row">${f('cap','سعة الأتوبيس (فرد)')}${f('bc','تكلفته ذهاب ورجوع')}</div>${r('عدد الأتوبيسات','bn')}${r('إجمالي الأتوبيسات','bt')}${r('تكلفة الفرد في الأتوبيس','rid','t')}`.replace('class="m" data-r="bn"','data-r="bn"'))+
+ cd('العاديين اللي بعربيتهم',`<div class="row">${f('qr','عددهم')}${f('alr','بدل العربية للفرد')}</div>`)+(has()?cd('خارج الدعم اللي بعربيتهم',`<div class="row">${f('qo','عددهم')}${f('alo','بدل العربية للفرد')}</div>`):'')],
+['💳','الاشتراكات','المبلغ اللي كل فرد بيدفعه اشتراك في المؤتمر.',()=>cd('الأفراد العاديين',`${f('fr','اشتراك الفرد')}${r('إجمالي الاشتراكات','ur','t')}`)+(has()?cd('خارج الدعم',`${f('fo','اشتراك الفرد')}${r('إجمالي الاشتراكات','uo','t')}`):'')],
+['🤝','الدعم الخارجي','الدعم اللي جاي من برّه وبيتوزع على الأفراد العاديين المستفيدين.',()=>cd('الدعم',`${f('sa','قيمة الدعم الجاي')}${f('sb','عدد المستفيدين','لو فاضي = كل العاديين')}${r('نصيب الفرد المستفيد','sp','t')}`)],
+['🧩','بنود تفصيلية (متقدم)','سجّل أي تفصيلة صغيرة: اسم البند وسعره وكميته، وتحسبه للفرد أو كمبلغ إجمالي، وتحدد يخص مين.',()=>cd('احتياطي طوارئ',`${f('cg','نسبة % على كل التكاليف','مثلاً 5')}${r('قيمة الاحتياطي','gr','t')}`)+
+ C().x.map((x,j)=>cd(`<input type="text" data-x="${j}" data-k="nm" value="${esc(x.nm||'')}" placeholder="اسم البند (مثلاً: وجبة غدا)">`,
+ `<div class="row"><div><label>السعر</label><input type="number" inputmode="decimal" data-x="${j}" data-k="a" value="${x.a??''}"></div><div><label>الكمية</label><input type="number" inputmode="decimal" data-x="${j}" data-k="q" value="${x.q??''}" placeholder="1"></div></div>
+ <label>طريقة الحساب</label><select data-x="${j}" data-k="md"><option value="tot" ${x.md!='pp'?'selected':''}>مبلغ إجمالي</option><option value="pp" ${x.md=='pp'?'selected':''}>للفرد (× عدد الأفراد)</option></select>
+ ${has()?`<label>يخص مين</label><select data-x="${j}" data-k="g"><option value="r" ${(x.g||'r')=='r'?'selected':''}>العاديين</option><option value="o" ${x.g=='o'?'selected':''}>خارج الدعم</option><option value="b" ${x.g=='b'?'selected':''}>الاتنين</option></select>`:''}
+ <label>ملاحظات (صرفنا فيه إيه / الفرد أخد إيه)</label><textarea rows="2" data-x="${j}" data-k="nt">${esc(x.nt||'')}</textarea>${r('إجمالي البند','xi'+j)}${r('تكلفة الفرد منه','xq'+j,'t')}<button class="btn o" data-del="${j}" style="margin-top:10px">حذف البند</button>`)).join('')+`<button class="btn" id="ax" style="margin-bottom:12px">＋ إضافة بند</button>`+cd('الإجمالي',r('بنود العاديين','xt')+(has()?r('بنود خارج الدعم','xo'):''))],
+['🧾','الفاتورة النهائية','ملخص كامل لكل الحسابات.',()=>`<div class="card inv"><h3 style="text-align:center">🧾 ${esc(C().name)}</h3>${INV().map(w=>w[0]=='h'?`<div class="sh">${esc(w[1])}</div>`:r(esc(w[0]),w[1],w[2])).join('')}</div><button class="btn o" id="sh">📤 مشاركة الفاتورة كنص</button>`]];
+const INV=()=>[['h','تكلفة الأفراد العاديين'],['بيت المؤتمرات','hr'],['الأتوبيس','br'],['بدل العربيات','ar'],['البنود التفصيلية','xt'],['احتياطي طوارئ','gr'],['إجمالي','cr','t'],
+...(has()?[['h','أفراد خارج الدعم'],['المبيت','ho'],['الأتوبيس','bo'],['بدل العربيات','ao'],['البنود التفصيلية','xo'],['احتياطي طوارئ','go'],['إجمالي','co','t']]:[]),
+...(C().x.length?[['h','تفاصيل البنود'],...C().x.map((x,j)=>[(x.nm||'بند')+(has()?(x.g=='o'?' (خارج الدعم)':x.g=='b'?' (الاتنين)':' (العاديين)'):''),'xi'+j])]:[]),
+['h','إجمالي التكاليف'],['كل التكاليف','tc','t'],['h','يُخصم منها'],['− اشتراكات العاديين','ur'],...(has()?[['− اشتراكات خارج الدعم','uo']]:[]),['− الدعم الخارجي','sa'],
+['إجمالي ما هتصرفه الكنيسة (سالب = فائض)','net','H'],['h','على الفرد العادي'],['التكلفة الحقيقية (قبل الدعم)','pc'],['− الدعم الخارجي','sp'],['بعد الدعم الخارجي','aft'],['− اشتراك الفرد','fr'],['الكنيسة بتدعم الفرد بـ','ch1','H'],
+...(has()?[['h','على الفرد خارج الدعم'],['تكلفة الفرد','opc'],['اشتراكه','fo'],['الفرق للفرد (+ فائض / − عجز)','od'],['إجمالي فائض/عجز خارج الدعم','on','H']]:[])];
+
+/* ---------- الشاشات ---------- */
+function home(){step=-1;const a=$('#app');
+ a.innerHTML=`<div class="top"><div class="tr"><h1>🧮 مؤتمراتي</h1><button class="ib" data-set="1">⚙️</button></div></div>
+ <p class="hint">${DB.list.length?'اضغط على المؤتمر لفتح فاتورته، وزرار ✏️ للتعديل، و⎘ للنسخ، و🗑 للحذف.':'ابدأ بأول مؤتمر. هتمشي خطوة خطوة لحد الفاتورة.'}</p>`+
+ (DB.list.length?DB.list.map((c,j)=>`<div class="cn" style="--d:${j*60}ms"><button class="nm" data-open="${esc(c.id)}"><b>${esc(c.name)}</b><small>على الكنيسة: <span class="m" data-n="${esc(c.id)}"></span></small></button><button class="ib" data-ed="${esc(c.id)}">✏️</button><button class="ib" data-dup="${esc(c.id)}">⎘</button><button class="ib" data-rm="${esc(c.id)}">🗑</button></div>`).join(''):`<div class="empty"><div class="bob">🏕️</div>مفيش مؤتمرات لسه</div>`)+
+ `<button class="btn" id="nw">＋ مؤتمر جديد</button>`;
+ DB.list.forEach(c=>{const e=document.querySelector(`[data-n="${c.id}"]`);if(e)e.textContent=fm(calc(c).net)})}
+function wiz(d=1,keep){const a=$('#app'),s=S[step];
+ a.innerHTML=`<div class="top"><div class="tr"><button class="ib" id="hm">→</button><h2>${s[0]} ${s[1]}</h2><small style="color:var(--mu)">${step+1}/${S.length}</small><button class="ib" data-set="1">⚙️</button></div><div class="dots">${S.map((q,j)=>`<button class="dt ${j<=step?'on':''} ${j==step?'cur':''}" data-st="${j}">${q[0]}</button>`).join('')}</div></div>
+ <div class="pg" style="animation-name:${d>0?'sl':'sr'}"><p class="hint">${s[2]}</p>${s[3]()}</div>
+ <div class="bot"><div><div class="pill"><span>تكلفة الفرد الحقيقية</span><b class="m" data-r="pc"></b><span>على الكنيسة</span><b class="m" data-r="net"></b></div>
+ <div class="nav">${step>0?'<button class="btn o" id="pv">السابق</button>':''}${step<S.length-1?'<button class="btn" id="nx">التالي ←</button>':'<button class="btn" id="hm2">✓ تم وحفظ</button>'}</div></div></div>`;
+ document.querySelectorAll('.pg .card').forEach((e,i)=>e.style.animationDelay=(i*50)+'ms');
+ refresh();if(!keep)window.scrollTo(0,0)}
+
+/* ---------- الإعدادات (نافذة) ---------- */
+function sheet(){const sw=(k,l)=>`<div class="srow"><span>${l}</span><input type="checkbox" class="tg" data-s="${k}" ${ST[k]?'checked':''}></div>`;
+ const d=openM(`<div><div class="tr"><h2>⚙️ الإعدادات</h2><button class="ib" data-cl="1">✕</button></div>
+ <div class="sh">🎨 الثيم</div><div class="tgrid">${TH.map(t=>`<button class="sw2 ${ST.th==t[0]?'on':''}" data-th="${t[0]}"><i style="background:linear-gradient(135deg,${t[2]} 50%,${t[3]} 50%)"></i>${t[1]}</button>`).join('')}</div>
+ <div class="sh">🔊 الصوت</div>${sw('snd','أصوات التفاعل')}
+ <div class="srow"><span>مستوى الصوت</span><input type="range" class="rg" min="0" max="1" step=".05" value="${ST.vol}" data-s="vol"></div>
+ <div class="srow"><span>نوع الأصوات</span><select data-s="pk" style="width:auto;font-size:15px;padding:8px"><option value="soft">ناعم</option><option value="bubble">فقاعات</option><option value="wood">خشب</option><option value="arcade">ألعاب</option></select></div>
+ <div class="sh">✨ التفاعل</div>${sw('hap','اهتزاز خفيف عند اللمس')}${sw('anim','الحركات والأنيميشن')}
+ <div class="sh">💾 بياناتك</div><div class="row"><button class="btn o" data-bk="1">📋 نسخ احتياطي</button><button class="btn o" data-rs="1">📥 استرجاع</button></div>
+ <button class="btn" data-cl="1" style="margin-top:14px">تمام</button></div>`);
+ d.querySelector('[data-s=pk]').value=ST.pk}
+function ask(msg,fn){window._ok=fn;openM(`<div><p>${esc(msg)}</p><div class="nav"><button class="btn o" data-no="1">إلغاء</button><button class="btn" data-ok="1">تأكيد</button></div></div>`);fx('warn',20)}
+function showTx(tx){const d=openM(`<div><p>انسخ النص من هنا:</p><textarea rows="10" readonly style="font-size:14px">${esc(tx)}</textarea><button class="btn" data-cl="1" style="margin-top:10px">تمام</button></div>`);d.querySelector('textarea').select()}
+window._ok=null;
+
+/* ---------- الأحداث ---------- */
+document.addEventListener('pointerdown',e=>{ac();const b=e.target.closest('button');if(!b||!ST.anim)return;
+ const q=b.getBoundingClientRect(),z=Math.max(q.width,q.height)*2,s=document.createElement('span');s.className='rp';
+ s.style.cssText=`width:${z}px;height:${z}px;left:${e.clientX-q.left-z/2}px;top:${e.clientY-q.top-z/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),550)},{passive:true});
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const D=t.dataset;
+ if(D.set!==undefined){fx('open',8);sheet()}
+ else if(D.cl!==undefined){fx('tap',6);closeM()}
+ else if(D.th){ST.th=D.th;saveS();applyS();fx('theme',[10,30,10]);document.querySelectorAll('.sw2').forEach(b=>b.classList.toggle('on',b.dataset.th===ST.th))}
+ else if(D.bk!==undefined){fx('tap',6);const js=JSON.stringify({v:1,list:DB.list});
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(js).then(()=>{toast('✅ اتنسخت بياناتك');fx('win',[20,40,20])}).catch(()=>showTx(js));else showTx(js)}
+ else if(D.rs!==undefined){fx('tap',6);openM(`<div><p>الصق نص النسخة الاحتياطية هنا:</p><textarea id="imp" rows="8" style="font-size:13px"></textarea><div class="nav" style="margin-top:10px"><button class="btn o" data-cl="1">إلغاء</button><button class="btn" data-doimp="1">استرجاع</button></div></div>`)}
+ else if(D.doimp!==undefined){try{const o=JSON.parse($('#imp').value);if(!o||!Array.isArray(o.list))throw 0;let n=0;
+  o.list.forEach(c=>{if(c&&typeof c==='object'){c.id=Date.now()+Math.random().toString(36).slice(2,5);c.x=Array.isArray(c.x)?c.x:[];c.name=c.name||'مؤتمر';DB.list.push(c);n++}});
+  save();closeM();if(step<0)home();toast('✅ اتضاف '+n+' مؤتمر');fx('win',[20,40,20])}catch(er){toast('⚠️ النص مش صحيح');fx('warn',60)}}
+ else if(D.ed){fx('open',8);DB.cur=D.ed;step=0;enter();wiz()}
+ else if(D.st!==undefined){fx('tap',6);step=+D.st;wiz(1)}
+ else if(D.ok!==undefined){const g=window._ok;closeM();fx('del',30);g&&g()}
+ else if(D.no!==undefined){fx('tap',6);closeM()}
+ else if(D.open){fx('open',8);DB.cur=D.open;step=S.length-1;enter();wiz()}
+ else if(t.id=='nw'){fx('add',[10,20,10]);const c=blank();DB.list.push(c);DB.cur=c.id;save();step=0;enter();wiz()}
+ else if(D.dup){fx('dup',12);const c=JSON.parse(JSON.stringify(DB.list.find(c=>c.id==D.dup)));c.id=Date.now()+'c';c.name+=' (نسخة)';DB.list.push(c);save();home();toast('⎘ اتعملت نسخة')}
+ else if(D.rm){const id=D.rm;ask('حذف المؤتمر ده نهائياً؟',()=>{DB.list=DB.list.filter(c=>c.id!=id);save();home()})}
+ else if(t.id=='nx'){fx('next',6);step++;wiz(1)}
+ else if(t.id=='pv'){fx('prev',6);step--;wiz(-1)}
+ else if(t.id=='hm'){fx('tap',6);save();toHome()}
+ else if(t.id=='hm2'){save();fx('win',[20,40,20]);confetti();toHome()}
+ else if(t.id=='ax'){fx('add',[10,20,10]);C().x.push({});save();wiz(0,1);
+  const cs=document.querySelectorAll('.pg .card'),nc=cs[cs.length-2];if(nc){nc.scrollIntoView({behavior:'smooth',block:'center'});const i=nc.querySelector('input');if(i)setTimeout(()=>i.focus(),350)}}
+ else if(D.del!==undefined){fx('del',25);const j=+D.del,card=t.closest('.card'),y=window.scrollY;if(card&&ST.anim)card.classList.add('out');
+  setTimeout(()=>{C().x.splice(j,1);save();wiz(0,1);window.scrollTo(0,y)},ST.anim?230:0)}
+ else if(t.id=='sh'){fx('tap',6);const tx=C().name+'\n'+INV().map(w=>w[0]=='h'?'\n'+w[1]+':':w[0]+': '+fm(R[w[1]])).join('\n');
+  try{if(navigator.share)navigator.share({text:tx}).catch(()=>showTx(tx));else showTx(tx)}catch(er){showTx(tx)}}});
+document.addEventListener('input',e=>{const t=e.target;
+ if(t.dataset.s!==undefined){const k=t.dataset.s;
+  if(t.type==='checkbox'){ST[k]=t.checked?1:0;saveS();applyS();fx(ST[k]?'on':'off',10)}
+  else if(t.type==='range'){ST[k]=+t.value;saveS();tapThr()}
+  else{ST[k]=t.value;saveS();fx('tap',6)}return}
+ const c=C();if(!c||t.dataset.k===undefined)return;
+ (t.dataset.x!==undefined?c.x[+t.dataset.x]:c)[t.dataset.k]=t.value;save();refresh();
+ if(t.tagName==='SELECT')fx('tap',6);else tickThr()});
+document.addEventListener('focusin',e=>{if(e.target.matches('input[type=number],input[type=text],textarea')&&!e.target.closest('#md')){const el=e.target;setTimeout(()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(er){}},300)}});
+
+/* سحب لليمين = التالي، لليسار = السابق */
+let tx0=0,ty0=0,swp=0;
+document.addEventListener('touchstart',e=>{const t=e.touches[0];tx0=t.clientX;ty0=t.clientY;swp=!e.target.closest('input,textarea,select,#md')},{passive:true});
+document.addEventListener('touchend',e=>{if(!swp||step<0)return;const t=e.changedTouches[0],dx=t.clientX-tx0,dy=t.clientY-ty0;
+ if(Math.abs(dx)>80&&Math.abs(dy)<45){if(dx>0&&step<S.length-1){fx('next',6);step++;wiz(1)}else if(dx<0&&step>0){fx('prev',6);step--;wiz(-1)}}},{passive:true});
+
+addEventListener('pagehide',save);
+if('serviceWorker' in navigator&&location.protocol.startsWith('http')&&location.hostname!=='localhost')navigator.serviceWorker.register('sw.js').catch(()=>{});
+applyS();home();
+</script></body></html>
